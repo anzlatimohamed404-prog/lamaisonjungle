@@ -1,0 +1,30 @@
+/**
+Mise en forme du composant Banner.jsx
+*/
+
+.banner { /* le . banner permet  de sélectionner la classe banner qui se trouve dans le composant Banner.jsx
+    */
+    display: flex;
+    align-items:  center;
+    justify-content: space-between;
+    padding: 32px;
+    border-bottom: 3px solid #31b572;
+    background-color: rgb(236, 187, 236);
+    
+}
+
+.banner-title{
+    color: rgb(44, 44, 42);
+    font-size: 3rem;
+    margin:  0;
+    font-family: Georgia, serif;
+
+
+}
+
+.bannerLogo {
+    width: 150px;   /* largeur */
+    height: 150px;  /* hauteur */
+    object-fit: cover; /* évite que l'image soit déformée */
+    border-radius: 8px; /* coins arrondis (optionnel) */
+}
