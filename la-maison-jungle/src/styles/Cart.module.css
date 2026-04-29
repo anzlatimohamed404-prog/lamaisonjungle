@@ -3,3 +3,7 @@
     background-color: #31b572;
     color: white;
 }
+
+.cart ul {
+    list-style: none;
+}
