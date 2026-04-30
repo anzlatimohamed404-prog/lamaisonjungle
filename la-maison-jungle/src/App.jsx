@@ -1,19 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-
-// j'importe le composant Banner.jsx
 import Banner from './components/Banner'
-import Cart from './components/Cart'
+import ShoppingList from './components/ShoppingList'
 
 function App() {
     return (
-        <>
+        <div>
             <Banner />
-            <Cart />
-        </>
+
+            <ShoppingList />
+        </div>
     )
 }
 

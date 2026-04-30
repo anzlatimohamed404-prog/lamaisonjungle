@@ -1,23 +1,33 @@
-
+// Importation des styles CSS modules pour ce composant
 import styles from '../styles/Banner.module.css'
-import logo from '../assets/fleur blanche.jpg' 
+// Importation de l'image de la fleur jaune depuis le dossier assets
+import fleur from '../assets/fleur-jaune.png'
 
+// Définition du composant Banner sous forme de fonction fléchée
 const Banner = () => {
-  const title = "Bienvenue à la maison jungle"
-
-  return (
-    <div className={styles.banner}>
-      <img src={logo} alt="fleur blanche" className={styles.bannerLogo}/>
-      <h1 className={styles.bannerTitle}>{title}</h1>
-    </div>
-  )
+    // La fonction retourne le JSX qui sera rendu
+    return (
+        // Conteneur principal du composant
+        <div>
+            {/* Section bannière avec l'image et le titre */}
+            <div className={styles.banner}>
+                {/* Image de la fleur avec attribut alt pour l'accessibilité */}
+                <img src={fleur} alt="fleur-jaune" />
+                {/* Titre principal de bienvenue */}
+                <h1>Bienvenue à la maison jungle</h1>
+            </div>
+            {/* Navigation avec les liens du menu */}
+            <nav className={styles.nav}>
+                {/* Lien vers la section Plantes */}
+                <a href="#">Plantes</a>
+                {/* Lien vers la section Conseil */}
+                <a href="#">Conseil</a>
+                {/* Lien vers la section À propos */}
+                <a href="#">À propos</a>
+            </nav>
+        </div>
+    )
 }
 
-
-
-// On exporte le composant Banner en tant qu'export par défaut,
-// ce qui permet aux autres fichiers du projet de l'importer facilement
-// avec la syntaxe : import Banner from './Banner'
-// Sans cet export, le composant resterait inaccessible depuis l'extérieur de ce fichier
+// Exportation du composant pour pouvoir l'importer ailleurs
 export default Banner
-
