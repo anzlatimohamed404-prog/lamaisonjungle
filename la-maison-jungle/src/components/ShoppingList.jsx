@@ -3,16 +3,14 @@
  */
 
 import styles from '../styles/ShoppingList.module.css';
-import PlantItem from './PlantItem';
+import PlantItem from './plantitem';
 
-// Importez l'image par défaut pour les plantes
-import placeHolderImg from '../assets/hero.png'
 
-const montseraImg = placeHolderImg
-const ficusImg = placeHolderImg
-const pothosImg = placeHolderImg
-const yuccoImg = placeHolderImg
-const palmierImg = placeHolderImg
+import montseraImg from '../assets/fleur1.jpg';
+import ficusImg from '../assets/fleur2.png';
+import pothosImg from '../assets/plante2 (1).jpg';
+import  yuccoImg from '../assets/plante3.jpg';
+import  palmierImg from '../assets/fleur-jaune.png';
 
 // Liste des plantes avec toutes les informations necessaires
 const planList = [

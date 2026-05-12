@@ -1,26 +1,24 @@
-import styles from '../styles/PlantItem.module.css'
+import CareScale from './CareSale'
+import styles from '../styles/Plantitem.module.css'
 
-const PlantItem = ({ id, cover, name, water, light, isBestSale, category, isSpecialOffer }) => {
-    const handleClick = (event) => {
-        console.log("Je clique sur mon evenement :", event);
+const PlantItem = ({ id, cover, name, water, light, category, isSpecialOffer }) => {
+    const handleClick = (plantName) => {
+        console.log('Je clique sur mon evenement :', plantName)
     }
 
-    // Composant CareScale pour afficher l'échelle de soin
-    const CareScale = ({ careType, scaleValue }) => {
-        const careIcons = {
-            water: '💧',
-            light: '☀️'
-        }
-        return (
-            <span className={styles.careScale}>
-                {careIcons[careType]} {scaleValue}
-            </span>
-        )
+    const handleImageClick = (event) => {
+        event.stopPropagation()
+        alert(`Vous avez clique sur l'image de ${name}`)
     }
 
     return (
         <li key={id} className={styles.lmjPlantItem} onClick={() => handleClick(name)}>
-            <img className={styles.lmjPlantItemCover} src={cover} alt={`${name} cover`} />
+            <img
+                className={styles.lmjPlantItemCover}
+                src={cover}
+                alt={`${name} cover`}
+                onClick={handleImageClick}
+            />
             {name}
 
             <div className={styles.careScales}>

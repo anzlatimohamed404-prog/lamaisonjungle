@@ -1,0 +1,14 @@
+.lmFooter {
+    color: rgb(20, 1, 15);
+    padding: 32px;
+    background-color: rgb(233, 152, 201);
+    border-top: solid 3px black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+}
+
+.lmFooterElem {
+    margin-bottom: 10px;
+}

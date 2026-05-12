@@ -4,6 +4,10 @@ import Banner from './components/Banner'
 import Cart from './components/Cart'
 // J'importe le composant ShoppingList
 import ShoppingList from './components/ShoppingList'
+// J'importe le composant QuestionForm
+import QuestionForm from './components/QuestionForm'
+// J'importe le composant Footer
+import Footer from './components/Footer'
 // J'importe le logo de la maison
 import logo from './assets/hero.png'
 // J'importe les styles CSS du Banner
@@ -33,7 +37,14 @@ function App() {
 
       {/* Composant ShoppingList pour la liste des plantes */}
       <ShoppingList />
+
+      {/* Composant QuestionForm pour les questions */}
+      <QuestionForm />
+
+      <Footer />
+  
     </>
+
   )
 }
 
