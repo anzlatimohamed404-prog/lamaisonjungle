@@ -1,54 +1,91 @@
-import styles from '../styles/ShoppingList.module.css'
+/**
+ * ShoppingList est un composant qui affiche la liste des plantes
+ */
 
-const plantList = [
-    { name: 'Monstera',       category: 'classique', id: '1', isBestSale: true  },
-    { name: 'Ficus lyrata',   category: 'classique', id: '2', isBestSale: false },
-    { name: 'Pothos argenté', category: 'classique', id: '3', isBestSale: false },
-    { name: 'Yucca',          category: 'classique', id: '4', isBestSale: false },
-    { name: 'Palmier',        category: 'classique', id: '5', isBestSale: false },
-    { name: 'Mawa fulera',    category: 'classique', id: '6', isBestSale: false },
-    { name: 'Mubwasera',      category: 'classique', id: '7', isBestSale: false },
-    { name: 'Langui langui',  category: 'classique', id: '8', isBestSale: false },
-]
+import styles from '../styles/ShoppingList.module.css';
+import PlantItem from './PlantItem';
 
-const cartItems = [
-    { name: 'Monstera',         price: 8  },
-    { name: 'Lierre',           price: 12 },
-    { name: 'Bouquet de fleurs',price: 9  },
-]
+// Importez l'image par défaut pour les plantes
+import placeHolderImg from '../assets/hero.png'
 
-const total = cartItems.reduce((acc, item) => acc + item.price, 0)
+const montseraImg = placeHolderImg
+const ficusImg = placeHolderImg
+const pothosImg = placeHolderImg
+const yuccoImg = placeHolderImg
+const palmierImg = placeHolderImg
+
+// Liste des plantes avec toutes les informations necessaires
+const planList = [
+    {
+        name: 'monstera',
+        category: 'Local',
+        id: '1',
+        isBestSale: true,
+        isSpecialOffer: true,
+        water: 3,
+        light: 1,
+        cover: montseraImg
+    },
+    {
+        name: 'ficus lyarata',
+        category: 'Local',
+        id: '2',
+        isBestSale: false,
+        isSpecialOffer: false,
+        water: 2,
+        light: 5,
+        cover: ficusImg
+    },
+    {
+        name: 'pothos argenté',
+        category: 'Local',
+        id: '3',
+        isBestSale: false,
+        isSpecialOffer: false,
+        water: 3,
+        light: 5,
+        cover: pothosImg
+    },
+    {
+        name: 'yucco',
+        category: 'Importer',
+        id: '4',
+        isBestSale: false,
+        isSpecialOffer: false,
+        water: 6,
+        light: 5,
+        cover: yuccoImg
+    },
+    {
+        name: 'palmier',
+        category: 'Importer',
+        id: '5',
+        isBestSale: false,
+        isSpecialOffer: false,
+        water: 2,
+        light: 3,
+        cover: palmierImg
+    }
+];
 
 const ShoppingList = () => {
     return (
-        <div>
-            <ul className={styles['lmj--plant-list']}>
-                {plantList.map((plant) => (
-                    <li
-                        key={plant.id}
-                        className={plant.isBestSale ? styles['best-sale'] : ''}
-                    >
-                        <span className={styles.dot}></span>
-                        {plant.name}
-                    </li>
-                ))}
-            </ul>
+        <ul className={styles.lmjPlantList}>
+            {planList.map(({ id, name, cover, water, light, isBestSale, category, isSpecialOffer }) => (
+                <PlantItem
+                    key={id}
+                    id={id}
+                    name={name}
+                    cover={cover}
+                    water={water}
+                    light={light}
+                    isBestSale={isBestSale}
+                    category={category}
+                    isSpecialOffer={isSpecialOffer}
+                />
+            ))}
+        </ul>
+    );
+};
 
-            <div className={styles['lmj--shopping-cart']}>
-                <h2>Votre panier</h2>
-                {cartItems.map((item) => (
-                    <div key={item.name} className={styles['cart-item']}>
-                        <span>{item.name}</span>
-                        <span>{item.price} €</span>
-                    </div>
-                ))}
-                <div className={styles.total}>
-                    <span>Total</span>
-                    <span>{total} €</span>
-                </div>
-            </div>
-        </div>
-    )
-}
-
-export default ShoppingList
+export default ShoppingList;
